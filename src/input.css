@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'titulos';
+    src: url('assets/REBELTON-Bold.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+#menu-mobile {
+    transform: translateY(-100%);  
+    opacity: 0;  
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+#menu-mobile.show {
+    transform: translateY(0);  
+    opacity: 1;  
+}
+
+#carrito {
+    transform: translateY(-100%);  
+    opacity: 0;  
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+#carrito.show {
+    transform: translateY(0);  
+    opacity: 1;  
+}
+
+.bg-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("assets/hero-image.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes calm-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6.5px);
+    }
+}
+
+.balanceo {
+    position: relative;
+    animation: calm-bounce 1.2s infinite;
+    animation-timing-function: ease-in-out;
+    transition: all .3s ease;
+}
+
+.balanceo:hover {
+    background-color: #c0ac28;
+}
+
+.scale-hover {
+    transition: scale .3s ease;
+}
+
+.scale-hover:hover {
+    scale:105%;
+}
+
+.bg-header {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con opacidad */
+    backdrop-filter: blur(10px); /* Aplica el desenfoque */
+    -webkit-backdrop-filter: blur(10px);
+}

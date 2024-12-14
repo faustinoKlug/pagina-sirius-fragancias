@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Cibo Ricco Pagina Web"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "pagina-sirius-fragancias"
+	}
+}
