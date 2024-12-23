@@ -115,7 +115,7 @@
 }
 
 /*
-! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -618,9 +618,24 @@ video {
   z-index: 9999;
 }
 
+.mx-\[5px\]{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mx-\[6px\]{
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .my-10{
@@ -648,12 +663,26 @@ video {
   margin-bottom: 2rem;
 }
 
+.my-\[2px\]{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.my-\[1px\]{
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
 .mb-1{
   margin-bottom: 0.25rem;
 }
 
 .mb-10{
   margin-bottom: 2.5rem;
+}
+
+.mb-2{
+  margin-bottom: 0.5rem;
 }
 
 .mb-3{
@@ -668,12 +697,20 @@ video {
   margin-left: 1rem;
 }
 
+.ml-\[6px\]{
+  margin-left: 6px;
+}
+
 .mr-1{
   margin-right: 0.25rem;
 }
 
 .mr-2{
   margin-right: 0.5rem;
+}
+
+.mr-\[4px\]{
+  margin-right: 4px;
 }
 
 .mt-2{
@@ -690,6 +727,14 @@ video {
 
 .mt-\[5px\]{
   margin-top: 5px;
+}
+
+.ml-\[5px\]{
+  margin-left: 5px;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
 }
 
 .block{
@@ -1040,6 +1085,15 @@ video {
   line-height: 1.75rem;
 }
 
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-\[15px\]{
+  font-size: 15px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -1060,6 +1114,11 @@ video {
   line-height: 1;
 }
 
+.text-cyan-500{
+  --tw-text-opacity: 1;
+  color: rgb(6 182 212 / var(--tw-text-opacity, 1));
+}
+
 .text-dorado{
   --tw-text-opacity: 1;
   color: rgb(226 204 57 / var(--tw-text-opacity, 1));
@@ -1070,9 +1129,28 @@ video {
   color: rgb(34 34 34 / var(--tw-text-opacity, 1));
 }
 
+.text-pink-500{
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity, 1));
+}
+
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#\]{
+  color: #;
+}
+
+.text-\[\#fff\]{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#c55555\]{
+  --tw-text-opacity: 1;
+  color: rgb(197 85 85 / var(--tw-text-opacity, 1));
 }
 
 .shadow-2xl{
@@ -1188,6 +1266,10 @@ article {
 }
 
 @media (min-width: 640px){
+  .sm\:block{
+    display: block;
+  }
+
   .sm\:max-w-\[500px\]{
     max-width: 500px;
   }
@@ -1236,11 +1318,6 @@ article {
     font-size: 3rem;
     line-height: 1;
   }
-
-  .md\:text-xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 900px){
@@ -1254,9 +1331,9 @@ article {
 }
 
 @media (min-width: 1024px){
-  .lg\:my-28{
-    margin-top: 7rem;
-    margin-bottom: 7rem;
+  .lg\:my-24{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   }
 
   .lg\:mb-4{

@@ -56,12 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
           (product) => product.id === selectedProduct.id
         );
 
+        const maxCantidad = (() => {
+          if ([10, 13, 4].includes(selectedProduct.id)) return 2;
+          if (selectedProduct.id === 5) return 3;
+          return 1;
+        })();
+
         if (existingProduct) {
-          existingProduct.cantidad += 1;
-          const $cantidadSpan = $productosContainer.querySelector(
-            `span[data-id="${existingProduct.id}"]`
-          );
-          $cantidadSpan.textContent = existingProduct.cantidad;
+          if (existingProduct.cantidad < maxCantidad) {
+            existingProduct.cantidad += 1;
+            const $cantidadSpan = $productosContainer.querySelector(
+              `span[data-id="${existingProduct.id}"]`
+            );
+            $cantidadSpan.textContent = existingProduct.cantidad;
+          }
         } else {
           selectedProduct.cantidad = 1;
           carrito.push(selectedProduct);
@@ -95,8 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           $sumarBtn.addEventListener("click", () => {
-            selectedProduct.cantidad += 1;
-            $cantidadSpan.textContent = selectedProduct.cantidad;
+            if (selectedProduct.cantidad < maxCantidad) {
+              selectedProduct.cantidad += 1;
+              $cantidadSpan.textContent = selectedProduct.cantidad;
+            }
           });
 
           $deleteBtn.addEventListener("click", () => {
@@ -123,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let mensaje = "¡Hola! Quiero realizar un pedido:\nProductos en el carrito:\n";
 
     carrito.forEach((producto) => {
-      mensaje += `${producto.cantidad} x ${producto.nombre} - Precio: ${producto.precio.toLocaleString("es-AR", {
+      mensaje += `${producto.cantidad} x ${producto.nombre_envio} - Precio: ${producto.precio.toLocaleString("es-AR", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       })}\n`;
