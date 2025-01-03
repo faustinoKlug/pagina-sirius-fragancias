@@ -170,16 +170,24 @@
                     d="M18 6L6 18M6 6l12 12" />
             </svg>
         </div>
+
         <nav class="flex flex-col justify-center items-center w-full">
             <ul class="flex flex-col items-center gap-y-6 w-full">
                 <li class="text-2xl cursor-pointer w-full text-center font-light li-mobile">
                     <a href="index.html">Inicio</a>
                 </li>
-                <li class="text-2xl cursor-pointer w-full text-center font-light li-mobile">
-                    <a href="#catalogo">Catálogo</a>
+                <li class="text-2xl cursor-pointer w-full text-center font-light" id="dropdown-btn">
+                    <a>Catálogo</a>
                 </li>
             </ul>
         </nav>
+
+        <div class="rounded-xl p-4 flex justify-center w-full text-center hidden" id="dropdown-menu">
+            <ul class="text-xl font-light">
+                <li class="li-mobile-dropdown mb-1"><a href="#productos-hombre">Hombres</a></li>
+                <li class="li-mobile-dropdown"><a href="#productos-mujer">Mujeres</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- CARRITO -->
@@ -206,6 +214,7 @@
         <div class="w-full max-w-6xl px-5 mx-auto">
             <!-- MOBILE -->
             <div class="w-full flex justify-between items-center my-3 md:hidden">
+                <!-- BTN CARRITO -->
                 <div class="w-full cursor-pointer carrito-btn relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
                         <path fill="#ffffff"
@@ -243,7 +252,33 @@
 
                 <ul class="flex gap-x-12 lg:gap-x-16">
                     <li class="text-xl cursor-pointer font-light"><a href="index.html">Inicio</a></li>
-                    <li class="text-xl cursor-pointer font-light"><a href="#catalogo">Catálogo</a></li>
+                    <li class="text-xl cursor-pointer font-light relative">
+                        <a id="dropdown-btn-desktop">Catálogo</a>
+                        <div class="absolute bg-[#070707] rounded-sm mt-2 p-5 hidden" id="dropdown-menu-desktop">
+                            <ul class="text-xl font-light">
+                                <li class="li-desktop-dropdown mb-[5px] flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        class="mr-1">
+                                        <path fill="#e2cc39"
+                                            d="M15.05 8.537L18.585 5H14V3h8v8h-2V6.414l-3.537 3.537a7.5 7.5 0 1 1-1.414-1.414M10.5 20a5.5 5.5 0 1 0 0-11a5.5 5.5 0 0 0 0 11" />
+                                    </svg>
+                                    <a href="#productos-hombre">Hombres</a>
+                                </li>
+                                <li class="li-desktop-dropdown flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        class="mr-1">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path
+                                                d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                            <path fill="#e2cc39"
+                                                d="M7 9.5a7.5 7.5 0 1 1 2.942 5.957l-1.788 1.787L9.58 18.67a1 1 0 1 1-1.414 1.414L6.74 18.659l-2.12 2.12a1 1 0 0 1-1.414-1.415l2.12-2.12l-1.403-1.403a1 1 0 1 1 1.414-1.414L6.74 15.83l1.79-1.79A7.47 7.47 0 0 1 7 9.5M14.5 4a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11" />
+                                        </g>
+                                    </svg>
+                                    <a href="#productos-mujer">Mujeres</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="cursor-pointer carrito-btn relative">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
                             <path fill="#ffffff"
@@ -255,7 +290,6 @@
                         </div>
                     </li>
                 </ul>
-
             </div>
         </div>
     </header>
@@ -380,20 +414,23 @@
         <section>
             <article class="place-items-center place-content-center">
                 <h2 class="font-bold text-4xl mb-2 flex items-center gap-x-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" class="hidden sm:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                        class="hidden sm:block">
                         <path fill="#c55555"
                             d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15" />
                     </svg>
                     ACLARACIONES:
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" class="hidden sm:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                        class="hidden sm:block">
                         <path fill="#c55555"
                             d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15" />
                     </svg>
                 </h2>
                 <div class="text-lg">
                     <p class="text-center">
-                        &bullet; Perfumes 
-                        <span class="font-bold">alternativos</span> con fragancias <span class="font-bold">altamente similares</span> 
+                        &bullet; Perfumes
+                        <span class="font-bold">alternativos</span> con fragancias <span class="font-bold">altamente
+                            similares</span>
                         a las <span class="font-bold">originales</span>
                     </p>
                     <p class="text-center my-1">
@@ -405,7 +442,8 @@
                             class="font-bold">12 horas</span>
                     </p>
                     <p class="text-center mt-1">
-                        &bullet; Contenido neto de <span class="font-bold">100ml (excepto las fragancias que se le especifica el mismo)</span>
+                        &bullet; Contenido neto de <span class="font-bold">100ml (excepto las fragancias que se le
+                            especifica el mismo)</span>
                     </p>
                 </div>
             </article>
@@ -418,8 +456,33 @@
                     <img src="assets/subrayado.png" alt="" class="object-contain w-[180px]" />
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center place-conter-center mt-8 gap-4"
-                    id="productsContainer"></div>
+                <span class="" id="productos-hombre"></span>
+                <h2 class="mt-10 md:mt-12 uppercase font-semibold text-3xl md:text-4xl flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" class="mr-2">
+                        <path fill="#e2cc39"
+                            d="M15.05 8.537L18.585 5H14V3h8v8h-2V6.414l-3.537 3.537a7.5 7.5 0 1 1-1.414-1.414M10.5 20a5.5 5.5 0 1 0 0-11a5.5 5.5 0 0 0 0 11" />
+                    </svg>
+                    Masculinos
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center place-conter-center gap-4"
+                    id="productsContainerHombres">
+                </div>
+
+                <span class="" id="productos-mujer"></span>
+                <h2 class="mt-10 md:mt-12 uppercase font-semibold text-3xl md:text-4xl flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" class="mr-2">
+                        <g fill="none" fill-rule="evenodd">
+                            <path
+                                d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                            <path fill="#e2cc39"
+                                d="M7 9.5a7.5 7.5 0 1 1 2.942 5.957l-1.788 1.787L9.58 18.67a1 1 0 1 1-1.414 1.414L6.74 18.659l-2.12 2.12a1 1 0 0 1-1.414-1.415l2.12-2.12l-1.403-1.403a1 1 0 1 1 1.414-1.414L6.74 15.83l1.79-1.79A7.47 7.47 0 0 1 7 9.5M14.5 4a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11" />
+                        </g>
+                    </svg>
+                    Femeninos
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center place-conter-center gap-4"
+                    id="productsContainerMujeres">
+                </div>
             </article>
         </section>
     </main>
@@ -461,7 +524,11 @@
             $btnHamb = d.getElementById("btn-hamb"),
             $menuHamb = d.getElementById("menu-mobile"),
             $btnHambClose = d.getElementById("btn-close"),
-            $liMobile = d.querySelectorAll(".li-mobile");
+            $liMobile = d.querySelectorAll(".li-mobile"),
+            $btnDropdown = d.getElementById("dropdown-btn"),
+            $menuDropdown = d.getElementById("dropdown-menu"),
+            $liMobileDropdown = d.querySelectorAll(".li-mobile-dropdown");
+
 
         $btnHamb.addEventListener("click", (e) => {
             $menuHamb.classList.toggle("show");
@@ -476,6 +543,42 @@
                 $menuHamb.classList.toggle("show");
             })
         });
+
+        $liMobileDropdown.forEach(li => {
+            li.addEventListener("click", e => {
+                $menuHamb.classList.toggle("show");
+                $menuDropdown.classList.toggle("hidden");
+            })
+        })
+
+        $btnDropdown.addEventListener("click", e => {
+            $menuDropdown.classList.toggle("hidden")
+        })
+
+        const $dropdownBtnDesktop = d.getElementById("dropdown-btn-desktop"),
+            $liDropdownDesktop = d.querySelectorAll(".li-desktop-dropdown"),
+            $dropdownMenuDesktop = d.getElementById("dropdown-menu-desktop");
+
+        $dropdownBtnDesktop.addEventListener("click", e => {
+            $dropdownMenuDesktop.classList.toggle("hidden")
+        })
+
+        $liDropdownDesktop.forEach(li => {
+            li.addEventListener("click", e => {
+                $dropdownMenuDesktop.classList.toggle("hidden")
+            })
+        });
+
+        document.documentElement.addEventListener("click", e => {
+            if (
+                !$dropdownMenuDesktop.classList.contains("hidden") &&
+                !e.target.closest("#dropdown-menu-desktop") &&
+                !e.target.closest("#dropdown-btn-desktop")
+            ) {
+                $dropdownMenuDesktop.classList.toggle("hidden");
+            }
+        });
+
     </script>
 
     <!-- HEADER SCROLL -->
@@ -497,8 +600,6 @@
 
         window.addEventListener('scroll', handleScroll);
     </script>
-
-    <script type="module" src="mensaje_wpp.js"></script>
     <script type="module" src="imprimir_productos.js"></script>
     <script type="module" src="carrito.js"></script>
 </body>

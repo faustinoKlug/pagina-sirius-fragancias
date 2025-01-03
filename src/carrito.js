@@ -1,4 +1,4 @@
-import { perfumes } from "./lista_productos.js";
+import { perfumes_hombre, perfumes_mujer } from "./lista_productos.js";
 
 const d = document,
   $carritoContainer = d.getElementById("carrito"),
@@ -6,7 +6,8 @@ const d = document,
   $carritoBtnClose = d.getElementById("carrito-btn-close"),
   $productosContainer = d.getElementById("cart-products");
 
-let carrito = []; 
+let carrito = [];
+const todosLosPerfumes = [...perfumes_hombre, ...perfumes_mujer]; // Combina los productos de hombre y mujer
 
 const updateCarritoCounter = (contador) => {
   const $counterCarritoDesktop = d.querySelector(".counter-carrito-D"),
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $btnAgregar.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const productId = e.target.getAttribute("data-id");
-      const selectedProduct = perfumes.find(
+      const selectedProduct = todosLosPerfumes.find(
         (perfume) => perfume.id === parseInt(productId)
       );
 
@@ -80,15 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const $div = d.createElement("div");
           $div.classList.add("py-[10px]", "flex", "w-full", "justify-between");
           $div.setAttribute("data-id", selectedProduct.id);
-          $div.innerHTML = `
-            <p class="cursor-pointer text-3xl flex items-center mb-1 mr-2 delete-product">&Cross;</p>
+          $div.innerHTML =
+            `<p class="cursor-pointer text-3xl flex items-center mb-1 mr-2 delete-product">&Cross;</p>
             <p class="flex items-center">${selectedProduct.nombre}</p>
             <div class="flex items-center">
               <button class="restar-producto-btn" data-id="${selectedProduct.id}">-</button>
               <span class="px-3" data-id="${selectedProduct.id}">${selectedProduct.cantidad}</span>
               <button class="sumar-producto-btn" data-id="${selectedProduct.id}">+</button>
-            </div>
-          `;
+            </div>`;
 
           const $restarBtn = $div.querySelector(".restar-producto-btn");
           const $sumarBtn = $div.querySelector(".sumar-producto-btn");
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let mensaje = "¡Hola! Quiero realizar un pedido:\nProductos en el carrito:\n";
 
     carrito.forEach((producto) => {
-      mensaje += `${producto.cantidad} x ${producto.nombre_envio} - Precio: ${producto.precio.toLocaleString("es-AR", {
+      mensaje += `${producto.cantidad} x ${producto.nombre} - Precio: ${producto.precio.toLocaleString("es-AR", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       })}\n`;
@@ -141,9 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mensaje += "\nGracias.";
 
-    const numeroTelefono = "3442654858"; 
+    const numeroTelefono = "3442654858";
     const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(urlWhatsapp, "_blank");
   });
 });
-
