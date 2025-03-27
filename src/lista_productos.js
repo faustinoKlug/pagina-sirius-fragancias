@@ -15,7 +15,7 @@ const perfumes_hombre = [
         cantidad: 1,
         descripcion: "Una fragancia sofisticada y energética, pensada para hombres que buscan destacar en cualquier ocasión exclusiva.",
         imagen: "assets/212-varon.png",
-        stock: true
+        stock: false
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const perfumes_hombre = [
         cantidad: 1,
         descripcion: "Una fragancia elegante y fresca, que refleja el poder y la confianza del hombre moderno.",
         imagen: "assets/versacce.png",
-        stock: true
+        stock: false
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const perfumes_hombre = [
     {
         id: 5,
         nombre: `ONE MILLION`,
-        precio: 26999.00,
+        precio: 28999.00,
         cantidad: 1,
         descripcion: "Una fragancia rica y especiada, que evoca la opulencia y el poder, diseñada para hombres que desean ser recordados.",
         imagen: "assets/one-million.png",
@@ -51,7 +51,7 @@ const perfumes_hombre = [
         cantidad: 1,
         descripcion: "Una fragancia vibrante y poderosa, pensada para hombres que buscan transmitir fuerza y victoria en cada paso.",
         imagen: "assets/invictus.png",
-        stock: true
+        stock: false
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const perfumes_hombre = [
         cantidad: 1,
         descripcion: "Una fragancia vibrante y poderosa, pensada para hombres que buscan transmitir fuerza y victoria en cada paso.",
         imagen: "assets/dolce-varon.png",
-        stock: true
+        stock: false
     },
     {
         id: 8,
